@@ -5,6 +5,7 @@ import LogoHeaderBar from "./LogoHeaderBar";
 import styled from "styled-components";
 import { primaryColor } from "../../../constants/constants";
 import ShopNavContainer from "./ShopNavContainer";
+import MobileNav from "../mobileNavbar/MobileNav";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -26,6 +27,7 @@ const Navbar = () => {
       <LogoHeaderBarContainer className="sticky top-0 lg:relative">
         <LogoHeaderBar />
       </LogoHeaderBarContainer>
+
       <Container className="hidden lg:block">
         <MainContainer>
           <Nav>
