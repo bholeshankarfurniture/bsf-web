@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import {
@@ -7,24 +8,37 @@ import {
   MenuIcon,
 } from "@heroicons/react/outline";
 import IconComponent from "./IconComponent";
+import MobileNav from "../mobileNavbar/MobileNav";
 
 const LogoHeaderBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const clickHandler = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <Container className="bg-white flex justify-between py-5 items-center">
-      <div className="w-11/12 m-auto flex justify-between items-center">
-        <Logo>
-          <Link href="/">
-            <a className="text-black font-bold ">Bhole Shankar Furniture</a>
-          </Link>
-        </Logo>
-        <IconsContainer className="grid grid-cols-4 lg:grid-cols-3 lg:divide-x divide-gray-500">
-          <IconComponent Icon={SearchIcon} />
-          <IconComponent Icon={UserIcon} />
-          <IconComponent Icon={ShoppingBagIcon} />
-          <MenuIcon className="cursor-pointer hover:text-[#ff7004]  h-6 lg:hidden w-10 sm:h-7" />
-        </IconsContainer>
-      </div>
-    </Container>
+    <>
+      <MobileNav isOpen={isOpen} clickToggle={clickHandler} />
+      <Container className="bg-white flex justify-between py-5 items-center">
+        <div className="w-11/12 m-auto flex justify-between items-center">
+          <Logo>
+            <Link href="/">
+              <a className="text-black font-bold ">Bhole Shankar Furniture</a>
+            </Link>
+          </Logo>
+          <IconsContainer className="grid grid-cols-4 lg:grid-cols-3 lg:divide-x divide-gray-500">
+            <IconComponent Icon={SearchIcon} />
+            <IconComponent Icon={UserIcon} />
+            <IconComponent Icon={ShoppingBagIcon} />
+            <MenuIcon
+              onClick={clickHandler}
+              className="cursor-pointer hover:text-[#ff7004]  h-6 lg:hidden w-10 sm:h-7"
+            />
+          </IconsContainer>
+        </div>
+      </Container>
+    </>
   );
 };
 
