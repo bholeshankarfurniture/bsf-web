@@ -63,23 +63,23 @@ const Navbar = () => {
 export default Navbar;
 
 const DefaultMessageBarContainer = styled.div`
-  z-index: 10000;
+  z-index: 999;
   position: relative;
 `;
 const LogoHeaderBarContainer = styled.div`
-  z-index: 10000;
+  z-index: 999;
   width: 100%;
 `;
 
 const Container = styled.div`
-  z-index: 9999;
+  z-index: 999;
   position: sticky;
   top: 0;
   transition: all 0.5s ease-out;
 `;
 
 const MainContainer = styled.div`
-  z-index: 9999;
+  z-index: 999;
   width: 100%;
   display: grid;
   place-items: center;
@@ -102,7 +102,7 @@ const Nav = styled.nav`
 `;
 
 const DropDownContainer = styled.div`
-  z-index: -9999;
+  z-index: -999;
   position: absolute;
   top: 100%;
   left: 50%;
