@@ -47,6 +47,7 @@ export default LogoHeaderBar;
 const Container = styled.div`
   width: 100%;
   background: #fff;
+  z-index: 1000;
 `;
 
 const Logo = styled.div`
