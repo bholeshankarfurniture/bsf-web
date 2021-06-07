@@ -90,9 +90,9 @@ const Hero = ({ slides }) => {
           );
         })}
 
-        <SliderButtons onBannerHover={onBannerHover}>
-          <PrevArrow onClick={prevSlide} />
-          <NextArrow onClick={nextSlide} />
+        <SliderButtons>
+          <PrevArrow onBannerHover={onBannerHover} onClick={prevSlide} />
+          <NextArrow onBannerHover={onBannerHover} onClick={nextSlide} />
         </SliderButtons>
       </HeroWrapper>
     </HeroSection>
@@ -221,19 +221,25 @@ const ArrowButtons = css`
   }
 `;
 const SliderButtons = styled.div`
-  position: absolute;
   bottom: 50px;
   right: 20px;
   display: flex;
   z-index: 10;
+`;
+const PrevArrow = styled(IoArrowBack)`
+  ${ArrowButtons}
+  position: absolute;
+  left: 20px;
+  transition: transform 0.5s, opacity 0.5s linear;
+  transform: ${({ onBannerHover }) =>
+    onBannerHover ? "translatex(0%)" : "translatex(-110%)"};
+  opacity: ${({ onBannerHover }) => (onBannerHover ? "1" : "0")};
+`;
+const NextArrow = styled(IoArrowForward)`
+  ${ArrowButtons}
+  right: 20px;
   transition: transform 0.5s, opacity 0.5s linear;
   transform: ${({ onBannerHover }) =>
     onBannerHover ? "translatex(0%)" : "translatex(110%)"};
   opacity: ${({ onBannerHover }) => (onBannerHover ? "1" : "0")};
-`;
-const PrevArrow = styled(IoArrowBack)`
-  ${ArrowButtons}
-`;
-const NextArrow = styled(IoArrowForward)`
-  ${ArrowButtons}
 `;

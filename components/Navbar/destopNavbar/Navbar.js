@@ -65,11 +65,11 @@ const Navbar = () => {
 export default Navbar;
 
 const DefaultMessageBarContainer = styled.div`
-  z-index: 999;
+  z-index: 1000;
   position: relative;
 `;
 const LogoHeaderBarContainer = styled.div`
-  z-index: 999;
+  z-index: 1000;
   width: 100%;
 `;
 

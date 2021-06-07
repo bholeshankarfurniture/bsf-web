@@ -9,36 +9,41 @@ const MobileNav = ({ isOpen, clickToggle }) => {
   const [isTrue, setisTrue] = useState(false);
 
   return (
-    <MainDiv isOpen={isOpen}>
-      <CloseBtn
-        onMouseEnter={() => setisTrue(true)}
-        onMouseLeave={() => setisTrue(false)}
-        onClick={clickToggle}
-      >
-        {isTrue ? <AiOutlineMinus /> : <MdClose />}
-      </CloseBtn>
-    </MainDiv>
+    <Main isOpen={isOpen} onClick={clickToggle}>
+      <MainDiv isOpen={isOpen}>
+        <CloseBtn
+          onMouseEnter={() => setisTrue(true)}
+          onMouseLeave={() => setisTrue(false)}
+          onClick={clickToggle}
+        >
+          {isTrue ? <AiOutlineMinus /> : <MdClose />}
+        </CloseBtn>
+      </MainDiv>
+    </Main>
   );
 };
 
 export default MobileNav;
 
 const MainDiv = styled.div`
-  width: 350px;
+  width: 270px;
   min-height: 100vh;
   background-color: ${primaryColor};
   padding: 50px 30px;
-  z-index: 1001;
+  z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
-  transition: 0.5s;
-  overflow-x: hidden;
+  transition: transform 0.5s;
   transform: ${({ isOpen }) =>
     isOpen ? "translateX(0%)" : "translateX(-100%)"};
 
   @media (min-width: 1024px) {
     display: none;
+  }
+
+  @media (min-width: 648px) {
+    min-width: 350px;
   }
 `;
 
@@ -55,4 +60,15 @@ const CloseBtn = styled.div`
   transition: 0.5s linear;
   position: absolute;
   right: 30px;
+`;
+
+const Main = styled.div`
+  z-index: 1000;
+  width: ${({ isOpen }) => (isOpen ? "100%" : "0%")};
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: ${({ isOpen }) =>
+    isOpen ? "rgba(0,0,0,0.4)" : "transparent"};
 `;
