@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { BiUpArrowAlt } from "react-icons/bi";
-import { secondaryColor } from "./../constants/constants";
+import { secondaryColor, secondaryDarkColor } from "./../constants/constants";
 
 const Scroll = ({ showBelow }) => {
   const [show, setShow] = useState(showBelow ? false : true);
@@ -53,7 +53,7 @@ const BackToTop = styled.div`
   width: 50px;
   height: 60px;
   border-radius: 50px;
-  background-color: ${secondaryColor};
+  background-color: ${secondaryDarkColor};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +63,7 @@ const BackToTop = styled.div`
   font-size: 32px;
 
   :hover {
-    background-color: #000;
+    background-color: ${secondaryColor};
     box-shadow: 0 0 20px rgba(225, 225, 225, 0.5);
   }
 `;

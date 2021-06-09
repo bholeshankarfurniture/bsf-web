@@ -1,20 +1,25 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { Spacer } from "../Spacer";
-import { secondaryColor, sectionBgColor } from "../../constants/constants";
+import {
+  primaryDarkColor,
+  secondaryColor,
+  secondaryDarkColor,
+  sectionBgColor,
+} from "../../constants/constants";
 
 const TopPageSection = ({ currentPageName }) => {
   return (
-    <Container className="w-100 ">
+    <Container>
       <AboutSection>
         <h1>{currentPageName}</h1>
-        <div className="flex">
+        <Div>
           <Link href="/">
             <a>Home </a>
           </Link>
           <Spacer width="0.3" />
           <p> / {currentPageName}</p>
-        </div>
+        </Div>
       </AboutSection>
     </Container>
   );
@@ -27,6 +32,11 @@ const Container = styled.div`
   padding: 5rem;
   background: ${sectionBgColor};
 `;
+
+const Div = styled.div`
+  display: flex;
+`;
+
 const AboutSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -48,7 +58,8 @@ const AboutSection = styled.div`
   h1 {
     font-size: 1.5rem;
     text-transform: uppercase;
-    font-weight: 500;
+    color: ${primaryDarkColor};
+    font-weight: 700;
 
     @media (min-width: 767px) {
       font-size: 2rem;
@@ -60,10 +71,14 @@ const AboutSection = styled.div`
     text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 0.1rem;
+    font-weight: 500;
+  }
+  p {
+    color: ${primaryDarkColor};
   }
 
   a {
-    color: ${secondaryColor};
+    color: ${secondaryDarkColor};
     position: relative;
   }
 
@@ -75,7 +90,7 @@ const AboutSection = styled.div`
     opacity: 0;
     left: 0;
     height: 2px;
-    border-bottom: 2px solid ${secondaryColor};
+    border-bottom: 2px solid ${secondaryDarkColor};
     transition: width 0.5s, opacity 0.5s linear;
   }
 

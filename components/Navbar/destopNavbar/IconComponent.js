@@ -18,7 +18,11 @@ const Div = styled.div`
   cursor: pointer;
   transition: color 00ms;
   height: 1.5rem;
-  color: ${primaryColor};
+  color: #fff;
+
+  @media (min-width: 1024px) {
+    color: ${primaryColor};
+  }
 
   :hover {
     color: ${secondaryColor};

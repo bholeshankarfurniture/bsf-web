@@ -4,7 +4,12 @@ import { iconCarouselData } from "./../../data/iconcaroselData";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { secondaryColor, secondaryFontColor } from "../../constants/constants";
+import {
+  primaryDarkColor,
+  secondaryColor,
+  secondaryDarkColor,
+  secondaryFontColor,
+} from "../../constants/constants";
 
 const IconCarousel = () => {
   return (
@@ -28,10 +33,10 @@ export default IconCarousel;
 const animationName = keyframes`
   from{
     transform: rotate(0deg);
-    border: 3px dashed ${secondaryColor};
+    border: 3px dashed ${secondaryDarkColor};
   }to{
     transform: rotate(360deg);
-    border: 3px dashed ${secondaryColor};
+    border: 3px dashed ${secondaryDarkColor};
   }
 
 `;
@@ -50,8 +55,9 @@ const InnerContainer = styled.div`
     position: absolute;
     width: 200px;
     height: 200px;
-    border: 3px solid ${secondaryFontColor};
+    border: 3px solid ${secondaryDarkColor};
     border-radius: 50%;
+    transition: border 0.5s;
   }
 
   img {
@@ -62,18 +68,19 @@ const InnerContainer = styled.div`
     margin-top: 0.7rem;
     font-weight: bold;
     font-size: 1.2rem;
-    color: ${secondaryFontColor};
+    color: ${primaryDarkColor};
   }
 
   :hover:after {
     cursor: pointer;
-    border: 3px dashed ${secondaryColor};
-    animation: ${animationName} 0.5s infinite;
+    border: 3px dashed ${secondaryDarkColor};
+    animation: ${animationName} 7s infinite linear;
+    transition: transform 0.5s;
   }
 
   :hover {
     h2 {
-      color: ${secondaryColor};
+      color: ${secondaryDarkColor};
     }
   }
 `;

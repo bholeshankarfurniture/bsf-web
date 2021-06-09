@@ -4,6 +4,7 @@ import {
   dv_padding,
   mv_padding,
   secondaryColor,
+  secondaryDarkColor,
   sectionBgColor,
 } from "../constants/constants";
 import TopPageSection from "../components/TopPageSection/TopPageSection";
@@ -86,5 +87,6 @@ const Div = styled.div`
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
+    color: ${secondaryDarkColor};
   }
 `;

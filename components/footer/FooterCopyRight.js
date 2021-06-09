@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { primaryDarkColor } from "../../constants/constants";
+import { primaryDarkColor, secondaryColor } from "../../constants/constants";
 
 const FooterCopyRight = () => {
   return (
@@ -59,4 +59,5 @@ const MainContainer = styled.div`
 
 const Span = styled.span`
   font-weight: 700;
+  color: ${secondaryColor};
 `;

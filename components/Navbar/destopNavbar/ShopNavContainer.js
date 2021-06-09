@@ -3,6 +3,7 @@ import { typesOfSofas } from "../../../data/productsData";
 import NavSliderContent from "./NavSliderContent";
 import AdBanner from "../../Banner/AdBanner";
 import { Spacer } from "../../Spacer";
+import { primaryColor } from "../../../constants/constants";
 
 const ShopNavContainer = ({ onMouseEnter, onMouseLeave }) => {
   return (
@@ -33,7 +34,7 @@ const Container = styled.div`
 const MainContent = styled.div`
   width: 90vw;
   height: auto;
-  background-color: #fff;
+  background-color: ${primaryColor};
   padding: 2rem;
   box-shadow: 0px 4px 14px -3px rgba(0, 0, 0, 0.8);
 `;

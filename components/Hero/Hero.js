@@ -211,15 +211,15 @@ const ArrowButtons = css`
   height: 50px;
   color: ${secondaryColor};
   cursor: pointer;
-  background: #fff;
+  background-color: #fff;
   border-radius: 50px;
   padding: 10px;
   margin-right: 1rem;
   user-select: none;
-  transition: 0.3s;
+  transition: background-color 0.5s, transform 0.5s;
 
   :hover {
-    background: ${secondaryColor};
+    background-color: ${secondaryColor};
     color: #fff;
     transform: scale(1.05);
   }

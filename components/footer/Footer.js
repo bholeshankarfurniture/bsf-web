@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { primaryColor } from "../../constants/constants";
+import { primaryColor, lightBlueColor } from "../../constants/constants";
 import FooterContent from "./FooterContent";
 import { infoData, accountData } from "./../../data/footerData";
 import { secondaryColor } from "./../../constants/constants";
@@ -154,7 +154,7 @@ const NewsLetterContainer = styled.div`
 `;
 const InputForm = styled.input`
   background-color: transparent;
-  border: 1px solid #4d4d4d;
+  border: 1px solid ${lightBlueColor};
   padding: 1rem 1.5rem;
   color: #fff;
   outline-width: 0;
