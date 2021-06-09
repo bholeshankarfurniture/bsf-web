@@ -1,15 +1,22 @@
 import styled from "styled-components";
-import CustomeIcon from "../../customeIcon/CustomeIcon";
 import { useState } from "react";
 import { MdClose } from "react-icons/md";
 import { AiOutlineMinus } from "react-icons/ai";
 import { primaryColor, secondaryColor } from "../../../constants/constants";
+import ListOfNavItems from "../../ListOfNavItems";
+import SubUnorderdList from "./NavList/SubUnorderdList";
 
 const MobileNav = ({ isOpen, clickToggle }) => {
   const [isTrue, setisTrue] = useState(false);
 
+  const [isExpand, setIsExpand] = useState(false);
+
+  const expandList = () => {
+    setIsExpand(!isExpand);
+  };
+
   return (
-    <Main isOpen={isOpen} onClick={clickToggle}>
+    <Main isOpen={isOpen}>
       <MainDiv isOpen={isOpen}>
         <CloseBtn
           onMouseEnter={() => setisTrue(true)}
@@ -18,12 +25,47 @@ const MobileNav = ({ isOpen, clickToggle }) => {
         >
           {isTrue ? <AiOutlineMinus /> : <MdClose />}
         </CloseBtn>
+
+        <UnOrderList>
+          <ListOfNavItems clickToggle={clickToggle} label="Home" path="/" />
+          <ListOfNavItems
+            clickToggle={clickToggle}
+            label="About us"
+            path="/aboutus"
+          />
+          <ListOfNavItems
+            label="shop"
+            path="#"
+            hadList="true"
+            expandOnClick={expandList}
+          />
+          <SubUnorderdList
+            clickToggle={clickToggle}
+            isExpand={isExpand}
+            expandOnClick={expandList}
+          />
+
+          <ListOfNavItems
+            clickToggle={clickToggle}
+            label="Blog"
+            path="/bsfBlog"
+          />
+          <ListOfNavItems
+            clickToggle={clickToggle}
+            label="Contact Us"
+            path="/contactus"
+          />
+        </UnOrderList>
       </MainDiv>
     </Main>
   );
 };
 
 export default MobileNav;
+
+const UnOrderList = styled.ul`
+  margin-top: 80px;
+`;
 
 const MainDiv = styled.div`
   width: 270px;
@@ -45,6 +87,9 @@ const MainDiv = styled.div`
   @media (min-width: 648px) {
     min-width: 350px;
   }
+
+  scroll-behavior: smooth;
+  overflow-y: scroll;
 `;
 
 const CloseBtn = styled.div`
@@ -71,4 +116,8 @@ const Main = styled.div`
   left: 0;
   background-color: ${({ isOpen }) =>
     isOpen ? "rgba(0,0,0,0.4)" : "transparent"};
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
 `;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { footerCopyRightBgColor } from "../../constants/constants";
+import { primaryDarkColor } from "../../constants/constants";
 
 const FooterCopyRight = () => {
   return (
@@ -21,7 +21,7 @@ export default FooterCopyRight;
 
 const MainContainer = styled.div`
   width: 100%;
-  background-color: ${footerCopyRightBgColor};
+  background-color: ${primaryDarkColor};
   padding: 2rem 2rem;
   display: flex;
   flex-direction: column-reverse;

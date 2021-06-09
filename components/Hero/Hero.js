@@ -8,6 +8,10 @@ import {
   secondaryFontColor,
   primaryFontColor,
   secondaryColor,
+  primaryDarkColor,
+  secondaryDarkColor,
+  secondaryLightColor,
+  sectionBgColor,
 } from "../../constants/constants";
 
 import Slide from "react-reveal/Slide";
@@ -106,7 +110,7 @@ const HeroSection = styled.div`
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background-color: ${bannerBgColor};
+  background-color: ${sectionBgColor};
 
   @media (min-width: 640px) {
     height: 60vh;
@@ -168,13 +172,13 @@ const HeroContent = styled.div`
   h2 {
     font-size: 1.3rem;
     font-weight: bold;
-    color: ${secondaryFontColor};
+    color: ${secondaryDarkColor};
   }
 
   h1 {
     font-size: 2.7rem;
     font-weight: bold;
-    color: ${primaryFontColor};
+    color: ${primaryDarkColor};
     margin-bottom: 1rem;
 
     @media screen and (max-width: 767px) {
