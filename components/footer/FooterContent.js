@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { secondaryColor } from "../../constants/constants";
 
 const FooterContent = ({ title, data }) => {
   return (
@@ -7,16 +8,11 @@ const FooterContent = ({ title, data }) => {
       <h1>{title}</h1>
       <div>
         {data.map((item) => (
-          <li
-            className="group list-none leading-8 cursor-pointer"
-            key={item.id}
-          >
+          <ListItem key={item.id}>
             <Link href={item.path}>
-              <a className="font-noraml text-white group-hover:text-[#ff7004] group-hover:pl-3 duration-500 ease-in-out ">
-                {item.link}
-              </a>
+              <LinkTag>{item.link}</LinkTag>
             </Link>
-          </li>
+          </ListItem>
         ))}
       </div>
     </ContentSection>
@@ -24,6 +20,22 @@ const FooterContent = ({ title, data }) => {
 };
 
 export default FooterContent;
+
+const ListItem = styled.li`
+  list-style-type: none;
+  line-height: 2rem;
+  cursor: pointer;
+
+  :hover a {
+    padding-left: 0.75rem;
+    color: ${secondaryColor};
+  }
+`;
+
+const LinkTag = styled.a`
+  color: #fff;
+  transition: padding-left 500ms, color 500ms;
+`;
 
 const ContentSection = styled.div`
   h1 {
