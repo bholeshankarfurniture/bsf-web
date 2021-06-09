@@ -6,15 +6,11 @@ const DefaultMessageBar = () => {
     <Container>
       <CenterContainer>
         <MessageContainer>
-          <p className=" text-center font-sans sm:text-left">
-            Welcome to our funitures
-          </p>
+          <p>Welcome to our funitures</p>
         </MessageContainer>
-        <DropDownContainer className="hidden sm:block grid-cols-2 divide-x divide-gray-500">
-          <a href="#" className="text-white pr-5 hover:text-[#ff7004]">
-            Language: (ENG)
-          </a>
-          <a href="#" className="text-white pl-5 hover:text-[#ff7004]">
+        <DropDownContainer>
+          <a href="#">Language: (ENG)</a>
+          <a href="#" className="item">
             Currency: (INR)
           </a>
         </DropDownContainer>
@@ -47,5 +43,34 @@ const CenterContainer = styled.div`
     justify-content: space-between;
   }
 `;
-const MessageContainer = styled.div``;
-const DropDownContainer = styled.div``;
+const MessageContainer = styled.div`
+  p {
+    text-align: center;
+    @media (min-width: 640px) {
+      text-align: left;
+    }
+  }
+`;
+const DropDownContainer = styled.div`
+  display: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @media (min-width: 640px) {
+    display: block;
+  }
+
+  a {
+    transition: color 500ms;
+    padding-right: 1.25rem;
+    color: #fff;
+    border-right-width: 0.05rem;
+
+    :hover {
+      color: ${secondaryColor};
+    }
+  }
+  a.item {
+    border-right-width: 0;
+    padding-left: 1.25rem;
+  }
+`;

@@ -5,10 +5,9 @@ const FooterCopyRight = () => {
   return (
     <MainContainer>
       <div>
-        <p className="text-white">
-          &copy; 2021{" "}
-          <span className="font-bold">Bhole Shankar Furniture </span>
-          Made with ❤ By <span className="font-bold">Misty Pavan Kumar</span>
+        <p>
+          &copy; 2021 <Span>Bhole Shankar Furniture </Span>
+          Made with ❤ By <Span>Misty Pavan Kumar</Span>
         </p>
       </div>
       <div>
@@ -54,5 +53,10 @@ const MainContainer = styled.div`
     font-size: 0.9rem;
     font-weight: 400;
     text-align: center;
+    color: #fff;
   }
+`;
+
+const Span = styled.span`
+  font-weight: 700;
 `;
