@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { secondaryFontColor } from "../constants/constants";
+import { secondaryDarkColor, secondaryFontColor } from "../constants/constants";
 
 const MainTitle = ({ title, description }) => {
   return (
@@ -18,6 +18,7 @@ const MainContainer = styled.div`
   h2 {
     font-size: 30px;
     font-weight: bold;
+    color: ${secondaryDarkColor};
 
     @media (min-width: 640px) {
       font-size: 32px;

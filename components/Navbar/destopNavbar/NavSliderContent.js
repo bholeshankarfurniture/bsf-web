@@ -1,5 +1,11 @@
 import styled from "styled-components";
-import { primaryFontColor } from "../../../constants/constants";
+import {
+  primaryColor,
+  primaryDarkColor,
+  primaryFontColor,
+  secondaryColor,
+  secondaryDarkColor,
+} from "../../../constants/constants";
 import Link from "next/link";
 
 const NavSliderContent = ({ title, data }) => {
@@ -8,16 +14,11 @@ const NavSliderContent = ({ title, data }) => {
       <h1>{title}</h1>
       <div className="mt-7">
         {data.map((item) => (
-          <li
-            className="group list-none leading-8 cursor-pointer"
-            key={item.id}
-          >
+          <ListItem key={item.id}>
             <Link href="#">
-              <a className="font-semibold text-[#1d1d1d] group-hover:text-[#ff7004] group-hover:pl-3 duration-500 ease-in-out ">
-                {item.type}
-              </a>
+              <LinkTag>{item.type}</LinkTag>
             </Link>
-          </li>
+          </ListItem>
         ))}
       </div>
     </ContentSection>
@@ -26,12 +27,28 @@ const NavSliderContent = ({ title, data }) => {
 
 export default NavSliderContent;
 
+const ListItem = styled.li`
+  list-style-type: none;
+  line-height: 2rem;
+  cursor: pointer;
+
+  :hover a {
+    padding-left: 0.75rem;
+    color: ${secondaryColor};
+  }
+`;
+
+const LinkTag = styled.a`
+  color: #fff;
+  transition: padding-left 500ms, color 500ms;
+`;
+
 const ContentSection = styled.div`
   flex: 1;
   margin: 0 1rem;
 
   h1 {
-    color: ${primaryFontColor};
+    color: ${secondaryColor};
     font-size: 1.2rem;
     font-weight: 700;
     line-height: 2rem;
@@ -45,7 +62,8 @@ const ContentSection = styled.div`
       bottom: 0;
       width: 100%;
       height: 0.2rem;
-      border-bottom: 0.05rem solid rgba(0, 0, 0, 0.1);
+      border-bottom: 0.05rem solid ${secondaryColor};
+      opacity: 0.5;
     }
   }
 `;

@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { useState } from "react";
 import {
   lightPrimaryFontColor,
+  primaryDarkColor,
   secondaryColor,
+  secondaryDarkColor,
 } from "../../../constants/constants";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { MdZoomOutMap, MdCompareArrows } from "react-icons/md";
@@ -37,8 +39,6 @@ const ProductCard = ({ isNew, imgId, productName, price, oldPrice }) => {
           <Button
             width="44"
             height="26"
-            bgColor="#007a58"
-            hoverBgColor="#007a58"
             opacityOnHover="1"
             cursor="default"
             bRadius="5"
@@ -125,6 +125,8 @@ const Div = styled.div`
     padding-bottom: 1rem;
     display: inline-block;
     transition: color 0.5s ease;
+    color: ${secondaryDarkColor};
+    font-weight: 700;
 
     :hover {
       color: ${secondaryColor};
@@ -134,6 +136,7 @@ const Div = styled.div`
 
   h3 {
     font-size: 1.2rem;
+    color: ${primaryDarkColor};
   }
 `;
 
