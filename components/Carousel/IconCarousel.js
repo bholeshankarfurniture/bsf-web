@@ -9,16 +9,16 @@ import { secondaryColor, secondaryFontColor } from "../../constants/constants";
 const IconCarousel = () => {
   return (
     <Container>
-      <div className="flex px-10 sm:px-20 overflow-x-scroll scrollbar-hide">
+      <MainDiv>
         {iconCarouselData.map((item, index) => (
-          <Div key = {index}>
+          <Div key={index}>
             <InnerContainer>
               <img src={item.icon} alt={item.title} />
               <h2>{item.title}</h2>
             </InnerContainer>
           </Div>
         ))}
-      </div>
+      </MainDiv>
     </Container>
   );
 };
@@ -85,6 +85,20 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const MainDiv = styled.div`
+  display: flex;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -webkit-scrollbar-display: none;
+
+  @media (min-width: 640px) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
 `;
 
 const Div = styled.div`

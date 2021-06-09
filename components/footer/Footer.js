@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { footerBgColor } from "../../constants/constants";
 import FooterContent from "./FooterContent";
 import { infoData, accountData } from "./../../data/footerData";
-import { sectionBgColor, secondaryColor } from "./../../constants/constants";
+import { secondaryColor } from "./../../constants/constants";
 import { Button } from "./../Button/Button";
 import { MailIcon } from "@heroicons/react/outline";
 import FooterCopyRight from "./FooterCopyRight";
@@ -15,8 +15,8 @@ const Footer = () => {
       <Container>
         <Div>
           <AboutSection>
-            <h1 className="text-white ">About Us</h1>
-            <p className="text-white ">
+            <h1>About Us</h1>
+            <p>
               Lorem ipsu dotor sit amet cons adipisicing elit sed do eisum
               tempor inddicent ut labor et dolore mangna aliqua. Ut enim ad
               minim veniam, quix nostruds
@@ -58,9 +58,9 @@ const Footer = () => {
 
             <BtnContainer>
               <Button>
-                <div className="flex justify-center items-center">
-                  <MailIcon className="h-6 pr-3" /> Send Mail
-                </div>
+                <BtnDiv>
+                  <MailIcon1 /> Send Mail
+                </BtnDiv>
               </Button>
             </BtnContainer>
           </NewsLetterContainer>
@@ -72,6 +72,11 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const MailIcon1 = styled(MailIcon)`
+  height: 1.5rem;
+  padding-right: 0.75rem;
+`;
 
 const Container = styled.div`
   padding: 3rem 2rem;
@@ -121,6 +126,10 @@ const Div = styled.div`
 `;
 
 const AboutSection = styled.div`
+  h1,
+  p {
+    color: #fff;
+  }
   p {
     font-weight: 400;
     padding: 0 0 1.2rem 0;
@@ -160,3 +169,8 @@ const InputForm = styled.input`
 `;
 
 const BtnContainer = styled.div``;
+const BtnDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
