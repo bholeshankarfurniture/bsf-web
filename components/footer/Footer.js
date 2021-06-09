@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { footerBgColor } from "../../constants/constants";
+import { primaryColor } from "../../constants/constants";
 import FooterContent from "./FooterContent";
 import { infoData, accountData } from "./../../data/footerData";
 import { secondaryColor } from "./../../constants/constants";
@@ -82,7 +82,7 @@ const Container = styled.div`
   padding: 3rem 2rem;
   width: 100%;
   height: auto;
-  background-color: ${footerBgColor};
+  background-color: ${primaryColor};
 
   @media (min-width: 640px) {
     padding: 5rem;

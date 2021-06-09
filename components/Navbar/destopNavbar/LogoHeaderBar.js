@@ -9,6 +9,7 @@ import {
 } from "@heroicons/react/outline";
 import IconComponent from "./IconComponent";
 import MobileNav from "../mobileNavbar/MobileNav";
+import { primaryDarkColor } from "../../../constants/constants";
 
 const LogoHeaderBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,6 +55,7 @@ const Logo = styled.div`
   a {
     font-size: 1.5rem;
     line-height: 40px;
+    color: ${primaryDarkColor};
 
     @media (min-width: 640px) {
       font-size: 2.25rem;

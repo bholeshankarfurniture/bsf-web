@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { secondaryColor } from "../../../constants/constants";
+import { primaryColor, secondaryColor } from "../../../constants/constants";
 
 const IconComponent = ({ Icon }) => {
   return (
@@ -18,6 +18,7 @@ const Div = styled.div`
   cursor: pointer;
   transition: color 00ms;
   height: 1.5rem;
+  color: ${primaryColor};
 
   :hover {
     color: ${secondaryColor};

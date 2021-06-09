@@ -3,9 +3,8 @@ import { useState } from "react";
 import DefaultMessageBar from "./DefaultMessageBar";
 import LogoHeaderBar from "./LogoHeaderBar";
 import styled from "styled-components";
-import { primaryColor } from "../../../constants/constants";
+import { primaryColor, secondaryColor } from "../../../constants/constants";
 import ShopNavContainer from "./ShopNavContainer";
-import MobileNav from "../mobileNavbar/MobileNav";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -98,7 +97,7 @@ const Nav = styled.nav`
     padding: 0 0.5rem;
 
     :hover {
-      color: #ff7004;
+      color: ${secondaryColor};
     }
   }
 `;
