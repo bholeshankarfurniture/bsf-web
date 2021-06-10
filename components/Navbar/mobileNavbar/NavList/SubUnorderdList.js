@@ -15,26 +15,13 @@ const SubUnorderdList = ({ isExpand, clickToggle }) => {
     <SubUnorderList isExpand={isExpand}>
       {mobileNavData.map((item, index) => {
         return (
-          <>
-            <ListOfNavItems
-              key={index}
-              path={item.path}
-              label={item.label}
-              hadList="true"
-              expandOnClick={expandSubList}
-            />
-            {item.types.map((subItem, index1) => {
-              return (
-                <Div key={index1} isExpandSubList={isExpandSubList}>
-                  <ListOfNavItems
-                    clickToggle={clickToggle}
-                    path="#"
-                    label={subItem.type}
-                  />
-                </Div>
-              );
-            })}
-          </>
+          <ListOfNavItems
+            key={index}
+            path={item.path}
+            label={item.label}
+            hadList="true"
+            expandOnClick={expandSubList}
+          />
         );
       })}
     </SubUnorderList>
