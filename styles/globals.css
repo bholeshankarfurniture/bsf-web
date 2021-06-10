@@ -6,8 +6,9 @@
   box-sizing: border-box;
 }
 
-html {
-  font-family: "Open-Sans", "sans-serif";
+
+body{
+  font-family: 'Open Sans', sans-serif;
   font-size: 95%;
 }
 
