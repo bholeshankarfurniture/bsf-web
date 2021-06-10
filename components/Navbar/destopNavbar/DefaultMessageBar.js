@@ -9,10 +9,10 @@ const DefaultMessageBar = () => {
           <p>Welcome to our funitures</p>
         </MessageContainer>
         <DropDownContainer>
-          <a href="#">Language: (ENG)</a>
-          <a href="#" className="item">
+          <Language href="#">Language: (ENG)</Language>
+          <Currency href="#" className="item">
             Currency: (INR)
-          </a>
+          </Currency>
         </DropDownContainer>
       </CenterContainer>
     </Container>
@@ -58,19 +58,24 @@ const DropDownContainer = styled.div`
   @media (min-width: 640px) {
     display: block;
   }
+`;
 
-  a {
-    transition: color 500ms;
-    padding-right: 1.25rem;
-    color: #fff;
-    border-right-width: 0.05rem;
+const Language = styled.a`
+  transition: color 500ms;
+  padding-right: 1.25rem;
+  color: #fff;
 
-    :hover {
-      color: ${secondaryColor};
-    }
+  :hover {
+    color: ${secondaryColor};
   }
-  a.item {
-    border-right-width: 0;
-    padding-left: 1.25rem;
+`;
+
+const Currency = styled.a`
+  transition: color 500ms;
+  padding-left: 1.25rem;
+  color: #fff;
+
+  :hover {
+    color: ${secondaryColor};
   }
 `;

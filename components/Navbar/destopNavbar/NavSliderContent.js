@@ -13,8 +13,8 @@ const NavSliderContent = ({ title, data }) => {
     <ContentSection>
       <h1>{title}</h1>
       <Div>
-        {data.map((item) => (
-          <ListItem key={item.id}>
+        {data.map((item, index) => (
+          <ListItem key={index}>
             <Link href={item.path}>
               <LinkTag>{item.type}</LinkTag>
             </Link>

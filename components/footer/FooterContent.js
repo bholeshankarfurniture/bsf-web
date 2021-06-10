@@ -7,8 +7,8 @@ const FooterContent = ({ title, data }) => {
     <ContentSection>
       <h1>{title}</h1>
       <div>
-        {data.map((item) => (
-          <ListItem key={item.id}>
+        {data.map((item, index) => (
+          <ListItem key={index}>
             <Link href={item.path}>
               <LinkTag>{item.link}</LinkTag>
             </Link>
