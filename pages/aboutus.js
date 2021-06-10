@@ -69,6 +69,7 @@ const WelcomeSection = styled.div`
   }
 
   img {
+    width: 100%;
     margin-right: 0;
     margin-bottom: 2rem;
 
