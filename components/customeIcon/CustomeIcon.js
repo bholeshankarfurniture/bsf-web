@@ -28,24 +28,27 @@ const MediaIcon = ({
 export default MediaIcon;
 
 const Div = styled.div`
-  padding: ${({ padding }) => (padding ? padding : "0.6")}rem;
-  border-radius: 50%;
+  height: ${({ height }) => (height ? height : "40")}px;
+  width: ${({ width }) => (width ? width : "40")}px;
+  border-radius: 50px;
   display: flex;
+  margin: 5px;
   justify-content: center;
   align-items: center;
   transition: background-color 0.5s ease-in-out;
   margin-right: 0.3rem;
-  color: ${({ iconColor }) => (iconColor ? iconColor : "#474747")};
   background-color: ${({ bgColor }) => (bgColor ? bgColor : "transparent")};
 
   :hover {
     background-color: ${secondaryColor};
-    color: ${({ iconColorOnHover }) =>
-      iconColorOnHover ? iconColorOnHover : "#474747"};
     cursor: pointer;
   }
 
+  :hover > a {
+    color: #fff;
+  }
+
   a {
-    text-decoration: none;
+    color: ${({ iconColor }) => (iconColor ? iconColor : "#474747")};
   }
 `;

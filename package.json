@@ -16,12 +16,11 @@
     "react-reveal": "^1.2.2",
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.2.3",
-    "tailwind-scrollbar-hide": "^1.0.3"
+    "styled-components": "^5.2.3"
+    
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "postcss": "^8.2.13",
-    "tailwindcss": "^2.1.2"
+    "autoprefixer": "^10.2.6"
+
   }
 }

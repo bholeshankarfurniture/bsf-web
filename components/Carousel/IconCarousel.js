@@ -96,8 +96,7 @@ const Container = styled.div`
 
 const MainDiv = styled.div`
   display: flex;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding: 2.5rem;
   overflow-x: scroll;
   scrollbar-width: none;
   -webkit-scrollbar-display: none;

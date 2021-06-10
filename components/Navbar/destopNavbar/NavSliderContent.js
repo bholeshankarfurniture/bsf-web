@@ -12,20 +12,24 @@ const NavSliderContent = ({ title, data }) => {
   return (
     <ContentSection>
       <h1>{title}</h1>
-      <div className="mt-7">
+      <Div>
         {data.map((item) => (
           <ListItem key={item.id}>
-            <Link href="#">
+            <Link href={item.path}>
               <LinkTag>{item.type}</LinkTag>
             </Link>
           </ListItem>
         ))}
-      </div>
+      </Div>
     </ContentSection>
   );
 };
 
 export default NavSliderContent;
+
+const Div = styled.div`
+  margin-top: 1.75rem;
+`;
 
 const ListItem = styled.li`
   list-style-type: none;

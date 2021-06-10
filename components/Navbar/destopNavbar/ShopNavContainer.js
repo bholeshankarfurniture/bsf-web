@@ -7,16 +7,16 @@ import { primaryColor } from "../../../constants/constants";
 
 const ShopNavContainer = ({ onMouseEnter, onMouseLeave }) => {
   return (
-    <Container className="hidden lg:block ">
+    <Container>
       <MainContent onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-        <div className="flex justify-between">
+        <Div>
           <NavSliderContent title="Sofas" data={typesOfSofas} />
           <NavSliderContent title="Dinning Tables" data={typesOfSofas} />
           <NavSliderContent title="Beds" data={typesOfSofas} />
           <NavSliderContent title="Mattresses" data={typesOfSofas} />
           <NavSliderContent title="Mattresses" data={typesOfSofas} />
           <NavSliderContent title="Mattresses" data={typesOfSofas} />
-        </div>
+        </Div>
 
         <Spacer height="2" />
         <AdBanner />
@@ -27,9 +27,19 @@ const ShopNavContainer = ({ onMouseEnter, onMouseLeave }) => {
 
 export default ShopNavContainer;
 
+const Div = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const Container = styled.div`
   width: 100%;
   height: auto;
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+  }
 `;
 const MainContent = styled.div`
   width: 90vw;

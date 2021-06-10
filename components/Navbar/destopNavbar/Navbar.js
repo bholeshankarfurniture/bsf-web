@@ -23,11 +23,11 @@ const Navbar = () => {
         <DefaultMessageBar />
       </DefaultMessageBarContainer>
 
-      <LogoHeaderBarContainer className="sticky top-0 lg:relative">
+      <LogoHeaderBarContainer>
         <LogoHeaderBar />
       </LogoHeaderBarContainer>
 
-      <Container className="hidden lg:block">
+      <Container>
         <MainContainer>
           <Nav>
             <Link href="/">
@@ -70,13 +70,24 @@ const DefaultMessageBarContainer = styled.div`
 const LogoHeaderBarContainer = styled.div`
   z-index: 1000;
   width: 100%;
+  position: sticky;
+  top: 0;
+
+  @media (min-width: 1024px) {
+    position: relative;
+  }
 `;
 
 const Container = styled.div`
   z-index: 999;
   position: sticky;
+  display: none;
   top: 0;
   transition: all 0.5s ease-out;
+
+  @media (min-width: 1024px) {
+    display: block;
+  }
 `;
 
 const MainContainer = styled.div`

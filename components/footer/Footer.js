@@ -94,7 +94,7 @@ const Container = styled.div`
     font-weight: 500;
     padding-bottom: 1.3rem;
     text-transform: uppercase;
-    color: #fff;
+    color: ${secondaryColor};
     letter-spacing: 0.1rem;
   }
 `;
@@ -126,10 +126,14 @@ const Div = styled.div`
 `;
 
 const AboutSection = styled.div`
-  h1,
+  h1 {
+    color: ${secondaryColor};
+  }
+
   p {
     color: #fff;
   }
+
   p {
     font-weight: 400;
     padding: 0 0 1.2rem 0;
@@ -159,6 +163,7 @@ const InputForm = styled.input`
   color: #fff;
   outline-width: 0;
   width: 100%;
+  outline-width: 0;
 
   :focus {
     border: 1px solid ${secondaryColor};
