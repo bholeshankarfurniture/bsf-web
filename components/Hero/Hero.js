@@ -4,13 +4,10 @@ import { heroSliderData } from "../../data/heroSliderData";
 import { Button } from "../Button/Button";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import {
-  bannerBgColor,
   secondaryFontColor,
-  primaryFontColor,
   secondaryColor,
   primaryDarkColor,
   secondaryDarkColor,
-  secondaryLightColor,
   sectionBgColor,
 } from "../../constants/constants";
 
@@ -58,6 +55,8 @@ const Hero = ({ slides }) => {
     setOnBannerHover(false);
   };
 
+  console.log(typeof onBannerHover);
+
   return (
     <HeroSection onMouseEnter={onEnter} onMouseLeave={onLeave}>
       <HeroWrapper>
@@ -95,8 +94,8 @@ const Hero = ({ slides }) => {
         })}
 
         <SliderButtons>
-          <PrevArrow onBannerHover={onBannerHover} onClick={prevSlide} />
-          <NextArrow onBannerHover={onBannerHover} onClick={nextSlide} />
+          <PrevArrow ishover={onBannerHover} onClick={prevSlide} />
+          <NextArrow ishover={onBannerHover} onClick={nextSlide} />
         </SliderButtons>
       </HeroWrapper>
     </HeroSection>
@@ -242,19 +241,19 @@ const SliderButtons = styled.div`
   z-index: 10;
 `;
 const PrevArrow = styled(IoArrowBack)`
-  ${ArrowButtons}
+  ${ArrowButtons};
   position: absolute;
   left: 20px;
   transition: transform 0.5s, opacity 0.5s linear;
-  transform: ${({ onBannerHover }) =>
-    onBannerHover ? "translatex(0%)" : "translatex(-110%)"};
-  opacity: ${({ onBannerHover }) => (onBannerHover ? "1" : "0")};
+  transform: ${({ ishover }) =>
+    ishover ? "translatex(0%)" : "translatex(-110%)"};
+  opacity: ${({ ishover }) => (ishover ? "1" : "0")};
 `;
 const NextArrow = styled(IoArrowForward)`
-  ${ArrowButtons}
+  ${ArrowButtons};
   right: 20px;
   transition: transform 0.5s, opacity 0.5s linear;
-  transform: ${({ onBannerHover }) =>
-    onBannerHover ? "translatex(0%)" : "translatex(110%)"};
-  opacity: ${({ onBannerHover }) => (onBannerHover ? "1" : "0")};
+  transform: ${({ ishover }) =>
+    ishover ? "translatex(0%)" : "translatex(110%)"};
+  opacity: ${({ ishover }) => (ishover ? "1" : "0")};
 `;

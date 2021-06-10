@@ -10,9 +10,7 @@ const DefaultMessageBar = () => {
         </MessageContainer>
         <DropDownContainer>
           <Language href="#">Language: (ENG)</Language>
-          <Currency href="#" className="item">
-            Currency: (INR)
-          </Currency>
+          <Currency href="#">Currency: (INR)</Currency>
         </DropDownContainer>
       </CenterContainer>
     </Container>
@@ -24,12 +22,6 @@ export default DefaultMessageBar;
 const Container = styled.div`
   width: 100%;
   background-color: ${primaryColor};
-
-  p {
-    color: ${secondaryColor};
-    font-style: italic;
-    font-weight: 100;
-  }
 `;
 
 const CenterContainer = styled.div`
@@ -45,7 +37,11 @@ const CenterContainer = styled.div`
 `;
 const MessageContainer = styled.div`
   p {
+    color: ${secondaryColor};
+    font-style: italic;
+    font-weight: 100;
     text-align: center;
+
     @media (min-width: 640px) {
       text-align: left;
     }
