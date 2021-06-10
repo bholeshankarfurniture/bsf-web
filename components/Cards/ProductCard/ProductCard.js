@@ -51,8 +51,7 @@ const ProductCard = ({ isNew, imgId, productName, price, oldPrice }) => {
       <OverLayContainer>
         <CustomeIcon
           bgColor="#fff"
-          iconColorOnHover="#fff"
-          padding="0.8"
+          iconColorOnHover="green"
           Icon={AiOutlineHeart}
           mediaURL="#"
         />
@@ -62,7 +61,6 @@ const ProductCard = ({ isNew, imgId, productName, price, oldPrice }) => {
           <CustomeIcon
             bgColor="#fff"
             iconColorOnHover="#fff"
-            padding="0.8"
             Icon={MdZoomOutMap}
             mediaURL="#"
           />
@@ -70,7 +68,6 @@ const ProductCard = ({ isNew, imgId, productName, price, oldPrice }) => {
           <CustomeIcon
             bgColor="#fff"
             iconColorOnHover="#fff"
-            padding="0.8"
             Icon={MdCompareArrows}
             mediaURL="#"
           />

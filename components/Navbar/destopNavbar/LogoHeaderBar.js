@@ -25,20 +25,20 @@ const LogoHeaderBar = () => {
   return (
     <>
       <MobileNav isOpen={isOpen} clickToggle={clickHandler} />
-      <Container className="bg-white flex justify-between py-5 items-center">
-        <div className="w-11/12 m-auto flex justify-between items-center">
+      <Container>
+        <Div>
           <Logo>
             <Link href="/">
-              <a className="text-black font-bold ">Bhole Shankar Furniture</a>
+              <a>Bhole Shankar Furniture</a>
             </Link>
           </Logo>
-          <IconsContainer className="grid grid-cols-4 lg:grid-cols-3 lg:divide-x divide-gray-500">
+          <IconsContainer>
             <IconComponent Icon={SearchIcon} />
             <IconComponent Icon={UserIcon} />
             <IconComponent Icon={ShoppingBagIcon} />
             <MenuIcon1 onClick={clickHandler} />
           </IconsContainer>
-        </div>
+        </Div>
       </Container>
     </>
   );
@@ -50,10 +50,23 @@ const Container = styled.div`
   width: 100%;
   background-color: ${primaryColor};
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 
   @media (min-width: 1024px) {
     background-color: #fff;
   }
+`;
+
+const Div = styled.div`
+  width: 91.666667%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Logo = styled.div`
@@ -62,6 +75,7 @@ const Logo = styled.div`
     line-height: 40px;
     color: ${secondaryColor};
     text-decoration: none;
+    font-weight: bold;
 
     @media (min-width: 640px) {
       font-size: 2rem;
@@ -73,7 +87,14 @@ const Logo = styled.div`
     }
   }
 `;
-const IconsContainer = styled.div``;
+const IconsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+`;
 
 const MenuIcon1 = styled(MenuIcon)`
   height: 1.5rem;

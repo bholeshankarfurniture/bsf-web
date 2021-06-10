@@ -135,14 +135,17 @@ const HeroWrapper = styled.div`
   overflow: hidden;
 
   @media (min-width: 640px) {
+    min-height: 60vh;
     height: 60vh;
   }
 
   @media (min-width: 768px) {
+    min-height: 70vh;
     height: 70vh;
   }
 
   @media (min-width: 1024px) {
+    min-height: 100vh;
     height: 100vh;
   }
 `;
@@ -203,8 +206,16 @@ const HeroContent = styled.div`
 const BtnContainer = styled.div`
   margin-bottom: 2rem;
 `;
-const HeroImgContainer = styled.div``;
-const HeroImage = styled.img``;
+const HeroImgContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const HeroImage = styled.img`
+  width: 100%;
+  @media (min-width: 648px) {
+  }
+`;
 
 const ArrowButtons = css`
   width: 50px;
