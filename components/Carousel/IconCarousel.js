@@ -98,8 +98,12 @@ const MainDiv = styled.div`
   display: flex;
   padding: 2.5rem;
   overflow-x: scroll;
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
   scrollbar-width: none;
-  -webkit-scrollbar-display: none;
 
   @media (min-width: 640px) {
     padding-left: 5rem;
