@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Spacer } from "../Spacer";
 import {
   primaryDarkColor,
-  secondaryColor,
   secondaryDarkColor,
   sectionBgColor,
 } from "../../constants/constants";
@@ -35,6 +34,8 @@ const Container = styled.div`
 
 const Div = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const AboutSection = styled.div`
