@@ -1,11 +1,5 @@
 import styled from "styled-components";
-import {
-  primaryColor,
-  primaryDarkColor,
-  primaryFontColor,
-  secondaryColor,
-  secondaryDarkColor,
-} from "../../../constants/constants";
+import { secondaryColor } from "../../../constants/constants";
 import Link from "next/link";
 
 const NavSliderContent = ({ title, data }) => {

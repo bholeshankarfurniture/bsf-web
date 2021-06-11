@@ -15,7 +15,7 @@ import Slide from "react-reveal/Slide";
 
 const Hero = ({ slides }) => {
   const [current, setCurrent] = useState(0);
-  const [onBannerHover, setOnBannerHover] = useState(false);
+  const [toggle, setToggle] = useState(false);
   const length = slides.length;
   const timeout = useRef(null);
 
@@ -48,14 +48,12 @@ const Hero = ({ slides }) => {
   };
 
   const onEnter = () => {
-    setOnBannerHover(true);
+    setToggle(true);
   };
 
   const onLeave = () => {
-    setOnBannerHover(false);
+    setToggle(false);
   };
-
-  console.log(typeof onBannerHover);
 
   return (
     <HeroSection onMouseEnter={onEnter} onMouseLeave={onLeave}>
@@ -94,8 +92,8 @@ const Hero = ({ slides }) => {
         })}
 
         <SliderButtons>
-          <PrevArrow ishover={onBannerHover} onClick={prevSlide} />
-          <NextArrow ishover={onBannerHover} onClick={nextSlide} />
+          <PrevArrow ishover={toggle} onClick={prevSlide} />
+          <NextArrow ishover={toggle} onClick={nextSlide} />
         </SliderButtons>
       </HeroWrapper>
     </HeroSection>

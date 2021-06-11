@@ -16,7 +16,7 @@ const Div = styled.div`
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transition: color 00ms;
+  transition: color 500ms;
   height: 1.5rem;
   color: #fff;
 

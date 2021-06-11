@@ -87,6 +87,7 @@ const Logo = styled.div`
     }
   }
 `;
+
 const IconsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
