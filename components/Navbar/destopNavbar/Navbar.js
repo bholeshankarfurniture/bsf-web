@@ -1,13 +1,34 @@
 import Link from "next/link";
 import { useState } from "react";
-import DefaultMessageBar from "./DefaultMessageBar";
-import LogoHeaderBar from "./LogoHeaderBar";
+import { useRouter } from "next/router";
+import {
+  SearchIcon,
+  UserIcon,
+  ShoppingBagIcon,
+  MenuIcon,
+} from "@heroicons/react/outline";
 import styled from "styled-components";
-import { primaryColor, secondaryColor } from "../../../constants/constants";
+import {
+  primaryColor,
+  secondaryColor,
+  secondaryColorGlow,
+  secondaryDarkColor,
+} from "../../../constants/constants";
 import ShopNavContainer from "./ShopNavContainer";
+import IconComponent from "./IconComponent";
 
 const Navbar = () => {
+  const router = useRouter();
   const [toggle, setToggle] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const styles = {
+    iconColor: `${secondaryDarkColor}`,
+  };
+
+  const clickHandler = () => {
+    setIsOpen(!isOpen);
+  };
 
   const open = () => {
     setToggle(true);
@@ -19,38 +40,54 @@ const Navbar = () => {
 
   return (
     <>
-      <DefaultMessageBarContainer>
+      {/* <DefaultMessageBarContainer>
         <DefaultMessageBar />
-      </DefaultMessageBarContainer>
+      </DefaultMessageBarContainer> */}
 
-      <LogoHeaderBarContainer>
+      {/* <LogoHeaderBarContainer>
         <LogoHeaderBar />
-      </LogoHeaderBarContainer>
+      </LogoHeaderBarContainer> */}
 
       <Container>
         <MainContainer>
           <Nav>
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-            <Link href="/aboutus">
-              <a>About Us</a>
-            </Link>
-            <Link href="#">
-              <a
-                onMouseEnter={open}
-                onMouseLeave={close}
-                className="display_nav"
-              >
-                Shop
-              </a>
-            </Link>
-            <Link href="/bsfBlog">
-              <a>Blog</a>
-            </Link>
-            <Link href="/contactus">
-              <a>Contact Us</a>
-            </Link>
+            <Logo>
+              <h4 onClick={() => router.replace("/")}>
+                Bhole Shankar Furniture
+              </h4>
+            </Logo>
+            <MainCenter>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+              <Link href="/aboutus">
+                <a>About Us</a>
+              </Link>
+              <Link href="#">
+                <a
+                  onMouseEnter={open}
+                  onMouseLeave={close}
+                  className="display_nav"
+                >
+                  Shop
+                </a>
+              </Link>
+              <Link href="/bsfBlog">
+                <a>Blog</a>
+              </Link>
+              <Link href="/contactus">
+                <a>Contact Us</a>
+              </Link>
+            </MainCenter>
+            <IconsContainer>
+              <IconComponent Icon={SearchIcon} iconColor={styles.iconColor} />
+              <IconComponent Icon={UserIcon} iconColor={styles.iconColor} />
+              <IconComponent
+                Icon={ShoppingBagIcon}
+                iconColor={styles.iconColor}
+              />
+              <MenuIcon1 onClick={clickHandler} iconColor={styles.iconColor} />
+            </IconsContainer>
           </Nav>
           <DropDownContainer toggle={toggle}>
             <ShopNavContainer onMouseEnter={open} onMouseLeave={close} />
@@ -63,55 +100,60 @@ const Navbar = () => {
 
 export default Navbar;
 
-const DefaultMessageBarContainer = styled.div`
-  z-index: 1000;
-  position: relative;
-`;
-const LogoHeaderBarContainer = styled.div`
-  z-index: 1000;
-  width: 100%;
-  position: sticky;
-  top: 0;
-
-  @media (min-width: 1024px) {
-    position: relative;
-  }
-`;
-
 const Container = styled.div`
   z-index: 999;
   position: sticky;
-  display: none;
   top: 0;
   transition: all 0.5s ease-out;
-
-  @media (min-width: 1024px) {
-    display: block;
-  }
 `;
 
 const MainContainer = styled.div`
   z-index: 999;
-  width: 100%;
-  display: grid;
-  place-items: center;
+  padding: 1.3rem 0;
+  /* border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem; */
+  border-bottom: 0.15rem solid ${secondaryColor};
+  box-shadow: 0 0px 20px ${secondaryColorGlow};
   background-color: ${primaryColor};
+
+  @media (min-width: 1024px) {
+    padding: 0.3rem;
+  }
 `;
 
 const Nav = styled.nav`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
   a {
-    color: #fff;
+    color: ${secondaryDarkColor};
     font-weight: 400;
-    display: inline-block;
     margin: 0 1rem;
     line-height: 10vh;
     padding: 0 0.5rem;
+    display: none;
 
     :hover {
       color: ${secondaryColor};
     }
+
+    @media (min-width: 1024px) {
+      display: inline-block;
+    }
   }
 `;
+
+const Logo = styled.div`
+  h4 {
+    color: ${secondaryColor};
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+`;
+
+const MainCenter = styled.div``;
 
 const DropDownContainer = styled.div`
   z-index: -999;
@@ -123,4 +165,34 @@ const DropDownContainer = styled.div`
       toggle ? "translateY(0%)" : "translateY(-160%)"}
     translateX(-50%);
   opacity: ${({ toggle }) => (toggle ? "1" : "0")};
+`;
+
+const IconsContainer = styled.div`
+  display: grid;
+  color: #fff;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+`;
+
+const MenuIcon1 = styled(MenuIcon)`
+  height: 1.5rem;
+  padding-right: 0.75rem;
+  cursor: pointer;
+  transition: color 0.5s;
+  color: #fff;
+
+  :hover {
+    color: ${secondaryColor};
+  }
+
+  @media (min-width: 640px) {
+    height: 1.75rem;
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
 `;

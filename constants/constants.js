@@ -3,6 +3,7 @@ export const primaryColor = "#022f47";
 export const primaryDarkColor = "#021e34";
 export const secondaryColor = "#14cddb";
 export const secondaryDarkColor = "#0e8f99";
+export const secondaryColorGlow = "hsl(188, 100%, 62%)";
 
 export const sectionBgColor = "#d1dee4";
 export const lightBlueColor = "#9cc1d1";
