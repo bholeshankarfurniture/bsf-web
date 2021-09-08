@@ -28,7 +28,7 @@ export default TopPageSection;
 
 const Container = styled.div`
   width: 100%;
-  padding: 5rem;
+  padding: 8rem 5rem 5rem 5rem;
   background: ${sectionBgColor};
 `;
 

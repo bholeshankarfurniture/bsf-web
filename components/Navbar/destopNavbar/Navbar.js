@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import {
   SearchIcon,
@@ -21,6 +21,13 @@ const Navbar = () => {
   const router = useRouter();
   const [toggle, setToggle] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobileView, setMobileView] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 990) {
+      setMobileView(true);
+    }
+  }, [isMobileView]);
 
   const styles = {
     iconColor: `${secondaryDarkColor}`,
@@ -53,7 +60,7 @@ const Navbar = () => {
           <Nav>
             <Logo>
               <h4 onClick={() => router.replace("/")}>
-                Bhole Shankar Furniture
+                {isMobileView ? "BS Furniture" : "Bhole Shankar Furniture"}
               </h4>
             </Logo>
             <MainCenter>
@@ -72,9 +79,9 @@ const Navbar = () => {
                   Shop
                 </a>
               </Link>
-              <Link href="/bsfBlog">
+              {/* <Link href="/bsfBlog">
                 <a>Blog</a>
-              </Link>
+              </Link> */}
               <Link href="/contactus">
                 <a>Contact Us</a>
               </Link>
@@ -102,16 +109,18 @@ export default Navbar;
 
 const Container = styled.div`
   z-index: 999;
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   transition: all 0.5s ease-out;
 `;
 
 const MainContainer = styled.div`
   z-index: 999;
   padding: 1.3rem 0;
-  /* border-bottom-left-radius: 3rem;
-  border-bottom-right-radius: 3rem; */
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
   border-bottom: 0.15rem solid ${secondaryColor};
   box-shadow: 0 0px 20px ${secondaryColorGlow};
   background-color: ${primaryColor};

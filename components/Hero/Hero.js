@@ -147,7 +147,9 @@ const HeroWrapper = styled.div`
   }
 `;
 
-const HeroSlide = styled.div``;
+const HeroSlide = styled.div`
+  padding-top: 100px;
+`;
 const HeroSlider = styled.div`
   display: grid;
   place-items: center;
