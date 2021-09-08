@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { primaryColor, secondaryColor } from "../../../constants/constants";
 
-const IconComponent = ({ Icon }) => {
+const IconComponent = ({ Icon, iconColor, iconHoverColor }) => {
   return (
-    <Div>
+    <Div iconColor={iconColor} iconHoverColor={iconHoverColor}>
       <Icon />
     </Div>
   );
@@ -21,11 +21,12 @@ const Div = styled.div`
   color: #fff;
 
   @media (min-width: 1024px) {
-    color: ${primaryColor};
+    color: ${({ iconColor }) => (iconColor ? iconColor : "#000")};
   }
 
   :hover {
-    color: ${secondaryColor};
+    color: ${({ iconHoverColor }) =>
+      iconHoverColor ? iconHoverColor : secondaryColor};
   }
 
   @media (min-width: 640px) {
